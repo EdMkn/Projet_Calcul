@@ -1,2 +1,2 @@
 # Projet_Calcul
-Application Javascript de calcul mental
+Application  web Java de calcul mental

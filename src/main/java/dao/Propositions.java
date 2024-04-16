@@ -24,10 +24,10 @@ public class Propositions {
          try {
              connexion = daoFactory.getConnection();
              statement = connexion.createStatement();
-             resultat = statement.executeQuery("SELECT `Réponse` FROM propositions;");
+             resultat = statement.executeQuery("SELECT `RÃ©ponse` FROM propositions;");
 
              while (resultat.next()) {
-                Integer reponse = resultat.getInt("Réponse");
+                Integer reponse = resultat.getInt("RÃ©ponse");
 
                  Proposition propos = new Proposition(reponse);
 
@@ -45,7 +45,7 @@ public class Propositions {
         
         try {
             connexion = daoFactory.getConnection();
-            preparedStatement = connexion.prepareStatement("INSERT INTO propositions(`Réponse`) VALUES(?);");
+            preparedStatement = connexion.prepareStatement("INSERT INTO propositions(`Reponse`) VALUES(?);");
             preparedStatement.setInt(1, proposition.getPossible());
 
             preparedStatement.executeUpdate();

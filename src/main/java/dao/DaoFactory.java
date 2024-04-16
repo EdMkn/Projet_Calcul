@@ -23,7 +23,7 @@ public class DaoFactory {
         }
 
         DaoFactory instance = new DaoFactory(
-                "jdbc:mysql://localhost:3308/projet_calcul", "EdMak", "Error@70");
+                "jdbc:mysql://localhost:3306/projet_calcul", "edmkn", "error70");
         return instance;
     }
 

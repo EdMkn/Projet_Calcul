@@ -32,12 +32,12 @@ public class Questions {
         try {
             connexion = daoFactory.getConnection();
             statement = connexion.createStatement();
-            resultat = statement.executeQuery("SELECT `numero` ,`Enoncé`,`Réponse`, `Niveau` FROM questions "
+            resultat = statement.executeQuery("SELECT `numero` ,`EnoncÃ©`,`RÃ©ponse`, `Niveau` FROM questions "
             		+ "	WHERE `Niveau`='"+niveau.toString()+"';");
 
             while (resultat.next()) {
-               Integer reponse = resultat.getInt("Réponse");
-               String enonce = resultat.getString("Enoncé");
+               Integer reponse = resultat.getInt("RÃ©ponse");
+               String enonce = resultat.getString("EnoncÃ©");
                Niveau niveau = Niveau.valueOf(resultat.getString("Niveau"));
 
                Question question = new Question(enonce, reponse, niveau);
@@ -74,7 +74,7 @@ public class Questions {
 		try {
 			connexion = daoFactory.getConnection();
 			preparedStatement = connexion
-					.prepareStatement("INSERT INTO questions('Enoncé','Réponse','Niveau') VALUES(?,?,?);");
+					.prepareStatement("INSERT INTO questions('EnoncÃ©','RÃ©ponse','Niveau') VALUES(?,?,?);");
 			preparedStatement.setString(1, question.getEnonce());
 			preparedStatement.setInt(2, question.getReponse());
 			preparedStatement.setString(3, question.getDifficulte().toString());
@@ -85,7 +85,7 @@ public class Questions {
 		}
 	}
 
-//question doit avoir tableau de proposition non déclaré dans le constructeur
+//question doit avoir tableau de proposition non dï¿½clarï¿½ dans le constructeur
 	public Niveau getNiveau() {
 		return niveau;
 	}
